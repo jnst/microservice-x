@@ -2,13 +2,19 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/jnst/microservice-x/module1/db"
 	"github.com/samber/lo"
-	"golang.org/x/example/hello/reverse"
 )
 
-func main() {
-	names := lo.Uniq[string]([]string{"Samuel", "John", "Samuel"})
-	fmt.Println(names)
+func Uniq() []string {
+	return lo.Uniq[string]([]string{"Samuel", "John", "Samuel"})
+}
 
-	fmt.Println(reverse.String("Hello, world!"))
+func main() {
+	//names := Uniq()
+	//fmt.Println(names)
+	//
+	//fmt.Println(reverse.String("Hello, world!"))
+	fmt.Println(db.Now())
 }
